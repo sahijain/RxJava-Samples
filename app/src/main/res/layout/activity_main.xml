@@ -23,4 +23,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="ACCUMULATE CALLS(BUFFER)" />
+
+    <Button
+        android:id="@+id/debounce"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="DEBOUNCE" />
 </LinearLayout>

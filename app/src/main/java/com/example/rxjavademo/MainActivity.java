@@ -8,6 +8,7 @@ import android.widget.Toast;
 
 import com.example.rxjavademo.buffer.BufferDemoFragment;
 import com.example.rxjavademo.concurrency.ConcurrencyDemoFragment;
+import com.example.rxjavademo.debounce.DebounceDemoFragment;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -36,9 +37,17 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @OnClick(R.id.buffer)
-    public void bufferDemo(){
+    public void bufferDemo() {
         getSupportFragmentManager().beginTransaction()
                 .replace(android.R.id.content, BufferDemoFragment.newInstance(), BufferDemoFragment.TAG)
+                .addToBackStack(null)
+                .commit();
+    }
+
+    @OnClick(R.id.debounce)
+    public void debounceDemo(){
+        getSupportFragmentManager().beginTransaction()
+                .replace(android.R.id.content, DebounceDemoFragment.newInstance(), DebounceDemoFragment.TAG)
                 .addToBackStack(null)
                 .commit();
     }
