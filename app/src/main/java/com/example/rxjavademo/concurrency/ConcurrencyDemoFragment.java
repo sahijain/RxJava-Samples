@@ -53,7 +53,7 @@ public class ConcurrencyDemoFragment extends Fragment{
                     @Override
                     public Observable<String> call(String s) {
                         return Observable.just("");
-                        
+
                     }
                 })
                 /*.map(new Func1<String, String>() {

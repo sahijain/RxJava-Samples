@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.example.rxjavademo.buffer.BufferDemoFragment;
 import com.example.rxjavademo.concurrency.ConcurrencyDemoFragment;
 
 import butterknife.BindView;
@@ -30,6 +31,14 @@ public class MainActivity extends AppCompatActivity {
     public void concurrencyDemo(){
         getSupportFragmentManager().beginTransaction()
                 .replace(android.R.id.content, ConcurrencyDemoFragment.newInstance(), ConcurrencyDemoFragment.TAG)
+                .addToBackStack(null)
+                .commit();
+    }
+
+    @OnClick(R.id.buffer)
+    public void bufferDemo(){
+        getSupportFragmentManager().beginTransaction()
+                .replace(android.R.id.content, BufferDemoFragment.newInstance(), BufferDemoFragment.TAG)
                 .addToBackStack(null)
                 .commit();
     }
