@@ -29,4 +29,22 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="DEBOUNCE" />
+
+    <Button
+        android:id="@+id/publish_subject"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TWO WAY DATA BINDING" />
+
+    <Button
+        android:id="@+id/polling"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="POLLING" />
+
+    <Button
+        android:id="@+id/rx_bus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="RXBus Demo" />
 </LinearLayout>

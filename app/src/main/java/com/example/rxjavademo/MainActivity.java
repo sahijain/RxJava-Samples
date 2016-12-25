@@ -1,16 +1,16 @@
 package com.example.rxjavademo;
 
-import android.support.v4.app.FragmentManager;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.widget.Button;
+import android.support.v7.app.AppCompatActivity;
 import android.widget.Toast;
 
 import com.example.rxjavademo.buffer.BufferDemoFragment;
 import com.example.rxjavademo.concurrency.ConcurrencyDemoFragment;
 import com.example.rxjavademo.debounce.DebounceDemoFragment;
+import com.example.rxjavademo.polling.PollingDemoFragment;
+import com.example.rxjavademo.rx_bus.RxbusMainFragment;
+import com.example.rxjavademo.twoway_data_binding.PublishSubjectDemoFragment;
 
-import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import rx.Observable;
@@ -52,12 +52,29 @@ public class MainActivity extends AppCompatActivity {
                 .commit();
     }
 
+    @OnClick(R.id.publish_subject)
+    public void publishSubject(){
+        getSupportFragmentManager().beginTransaction()
+                .replace(android.R.id.content, PublishSubjectDemoFragment.newInstance(), PublishSubjectDemoFragment.TAG)
+                .addToBackStack(null)
+                .commit();
+    }
 
+    @OnClick(R.id.polling)
+    public void pollingDemo(){
+        getSupportFragmentManager().beginTransaction()
+                .replace(android.R.id.content, PollingDemoFragment.newInstance(), PollingDemoFragment.TAG)
+                .addToBackStack(null)
+                .commit();
+    }
 
-
-
-
-
+    @OnClick(R.id.rx_bus)
+    public void rxBusDemo(){
+        getSupportFragmentManager().beginTransaction()
+                .replace(android.R.id.content, RxbusMainFragment.newInstance(), PollingDemoFragment.TAG)
+                .addToBackStack(null)
+                .commit();
+    }
 
 
 
